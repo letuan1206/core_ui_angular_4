@@ -1,0 +1,329 @@
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-speedometer"></i> Setup </a>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item nav-dropdown section-anchor ancho-3" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/personal-setting', 'user-information']">
+          <i class="icon-pie-chart"></i> Personal Settings</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href-anchor="#user-information" [routerLink]="['/personal-setting', 'user-information']">
+              User Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href-anchor="#themes" [routerLink]="['/personal-setting', 'themes']"> Themes </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href-anchor="#email-setting" [routerLink]="['/personal-setting', 'email-setting']"> Email Setting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href-anchor="#email-signature" [routerLink]="['/personal-setting', 'email-signature']">Email Signature </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href-anchor="#divisions" [routerLink]="['/personal-setting', 'divisions']">Division </a>
+          </li>
+        </ul>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="widgets.html">
+          <i class="icon-calculator"></i> Users & Permission</a>
+      </li>
+
+      <li [hidden]="!showMenuDashboard" class="nav-item nav-dropdown section-anchor ancho-1" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/organisation']">
+          <i class="icon-puzzle"></i> Organisation Settings
+        </a>
+        <ul class="nav-dropdown-items" [ngClass]="{'disable-sub-menu': disableSubmenu }">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href="#" href-anchor="#section-1" (click)="posRouterCurrent()"> Company Details </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-2" (click)="posRouterCurrent()">
+              Banking Details </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-3" (click)="posRouterCurrent()"> Superfund</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-4" (click)="posRouterCurrent()"> Company Logo
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- CLIENTS -->
+      <li [hidden]="!showMenuClient" class="nav-item nav-dropdown section-anchor ancho-5" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/clients']">
+          <i class="icon-puzzle"></i> Client
+        </a>
+        <ul class="nav-dropdown-items" [ngClass]="{'disable-sub-menu': disableSubmenu }">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href="#" href-anchor="#section-client-detail" (click)="posRouterCurrent()"> Client Information </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-client-contacts" (click)="posRouterCurrent()"> Contacts </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-client-contract-details" (click)="posRouterCurrent()"> Contract Details </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-client-attachments" (click)="posRouterCurrent()"> Attachments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-client-sites" (click)="posRouterCurrent()"> Sites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-client-timeline" (click)="posRouterCurrent()"> Timeline</a>
+          </li>
+        </ul>
+      </li>
+      <!-- End of Clients -->
+
+      <li [hidden]="!showMenuSites" class="nav-item nav-dropdown section-anchor ancho-sites" [ngClass]="{'open': addClassOpenSite }">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/sites']">
+          <i class="icon-puzzle"></i> Sites
+        </a>
+        <ul class="nav-dropdown-items" [ngClass]="{'disable-sub-menu': disableSubmenu }">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href="#" href-anchor="#section-site-detail" (click)="posRouterCurrent()"> Site Information </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-site-contract-details" (click)="posRouterCurrent()"> Contract Details </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-site-attachments" (click)="posRouterCurrent()"> Attachments </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-site-banned-employees" (click)="posRouterCurrent()"> Banned Employees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-site-contacts" (click)="posRouterCurrent()"> Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-site-timeline" (click)="posRouterCurrent()"> Timeline</a>
+          </li>
+        </ul>
+      </li>
+      <li [hidden]="!showSiteDetail" class="nav-item nav-dropdown section-anchor ancho-site-detail">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/sites/detail', siteID]" (click)="resetShowSubMenuSite()">
+          <i class="icon-puzzle"></i> Sites
+        </a>
+      </li>
+      <li [hidden]="!showMenuSubSite" class="nav-item nav-dropdown section-anchor ancho-patrol-tracking" [ngClass]="{'open': siteSubMenu.patrolTracking}"
+        (click)="showSubMenuSite('patrolTracking')">
+        <a class="nav-link nav-dropdown-toggle">
+          <i class="icon-puzzle"></i> Patrol Tracking
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menu" [routerLink]="['/sites/site-map', siteID]" href-anchor="#section-patrol-site-locations"
+              (click)="posRouterCurrent()">
+              Site Map & Locations </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menu" [routerLink]="['/sites/check-point', siteID]" href-anchor="#section-patrol-checkPoints-scheduling"
+              (click)="posRouterCurrent()">
+              Check Points & Scheduling </a>
+          </li>
+        </ul>
+      </li>
+      <li [hidden]="!showMenuSubSite" class="nav-item nav-dropdown section-anchor" [ngClass]="{'open': siteSubMenu.reports}" (click)="showSubMenuSite('reports')">
+        <a class="nav-link nav-dropdown-toggle">
+          <i class="icon-puzzle"></i> Reports
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menu" [routerLink]="['/sites/search-report', siteID]" href-anchor="#section-reports-search"
+              (click)="posRouterCurrent()">
+              Search Report </a>
+          </li>
+        </ul>
+      </li>
+
+      <li [hidden]="!showMenuSubSite" class="nav-item nav-dropdown section-anchor" [ngClass]="{'open': siteSubMenu.reportSetup}"
+        (click)="showSubMenuSite('reportSetup')">
+        <a class="nav-link nav-dropdown-toggle">
+          <i class="icon-puzzle"></i> Report Setup
+        </a>
+        <ul class="nav-dropdown-items">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#section-reports-templates" (click)="posRouterCurrent()"> Report Templates </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active-menu" [routerLink]="['/sites/report-notification', siteID]" href-anchor="#section-reports-notification"
+              (click)="posRouterCurrent()">
+              Report Notification </a>
+          </li>
+        </ul>
+      </li>
+      <!-- End of Sites -->
+
+      <!-- CONTACT -->
+      <li [hidden]="!showMenuContact" class="nav-item nav-dropdown section-anchor ancho-contact" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/contact']">
+          <i class="icon-puzzle"></i> Contact
+        </a>
+        <ul class="nav-dropdown-items" [ngClass]="{'disable-sub-menu': disableSubmenu }">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href="#" href-anchor="#contact-details" (click)="posRouterCurrent()"> Contact Information </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#contact-sites" (click)="posRouterCurrent()"> Sites </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#contact-attachments" (click)="posRouterCurrent()"> Attachments </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#contact-banned-employees" (click)="posRouterCurrent()"> Banned Employees </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#contact-timeline" (click)="posRouterCurrent()"> Timeline </a>
+          </li>
+
+        </ul>
+      </li>
+      <!-- End of CONTACT -->
+
+      <!-- Employees -->
+      <li [hidden]="!showMenuEmployee" class="nav-item nav-dropdown section-anchor ancho-employee" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/employees']">
+          <i class="icon-puzzle"></i> Employees
+        </a>
+        <ul class="nav-dropdown-items" [ngClass]="{'disable-sub-menu': disableSubmenu }">
+          <li class="nav-item">
+            <a class="nav-link active-menu" href="#" href-anchor="#employee-information" (click)="posRouterCurrent()"> Employee Information </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#employee-attachments" (click)="posRouterCurrent()"> Attachments </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" href-anchor="#employee-timeline" (click)="posRouterCurrent()"> Timeline </a>
+          </li>
+        </ul>
+      </li>
+      <!-- End of Employees -->
+
+      <!-- Dashboard -->
+      <li [hidden]="!showMenuDashboard" class="nav-item nav-dropdown section-anchor ancho-2" routerLinkActive="open">
+        <a class="nav-link" [routerLink]="['/configuration', 'section-5']">
+          <i class="icon-pie-chart"></i> Configuration System</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link active-menu" [routerLink]="['/configuration', 'section-5']" href-anchor="#section-5"> Country </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-6']" href-anchor="#section-6">
+              States </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-7']" href-anchor="#section-7"> Divisions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-8']" href-anchor="#section-8"> Ratings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-9']" href-anchor="#section-9"> Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-10']" href-anchor="#section-10"> Industry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/configuration', 'section-11']" href-anchor="#section-11"> Positions</a>
+          </li>
+        </ul>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-pie-chart"></i> Templates</a>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-compass icons"></i> Automation</a>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-pie-chart icons"></i> Web Integration </a>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-paper-plane icons"></i> Report Setup</a>
+      </li>
+      <li [hidden]="!showMenuDashboard" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Subscription Manager
+        </a>
+      </li>
+      <!-- End of Dashboard -->
+
+      <!-- Rostering -->
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="icon-speedometer"></i> Dashboard </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item nav-dropdown section-anchor ancho-4" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/rostering']">
+          <i class="icon-pie-chart"></i> Rostering</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/rostering']" routerLinkActive="active-menu">Site Roster</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Employee Roster </a>
+          </li>
+        </ul>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="widgets.html">
+          <i class="icon-calculator"></i> Time & Attendance</a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item ">
+        <a class="nav-link" href="organisation-setting.html">
+          <i class="icon-puzzle"></i>
+          Unassigned Shifts</a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-pie-chart"></i> Clocked In </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-compass icons"></i> Late Clocked In
+        </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-pie-chart icons"></i> Leave Requests</a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-paper-plane icons"></i> Employees on Leave</a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Accounts </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Reporting </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Notifications </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Payroll </a>
+      </li>
+      <li [hidden]="!showMenuRoster" class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="icon-social-dribbble icons"></i> Invoicing </a>
+      </li>
+      <!-- End of Rostering -->
+    </ul>
+  </nav>
+  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>

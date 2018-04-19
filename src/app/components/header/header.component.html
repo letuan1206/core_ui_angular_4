@@ -1,0 +1,105 @@
+<header class="app-header navbar">
+  <button AsideToggleDirective class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" [routerLink]="['/dashboard']"></a>
+  <!--<button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" AsideToggleDirective>-->
+  <!--<span class="navbar-toggler-icon"></span>-->
+  <!--</button>-->
+  <button class="sidebar-minimizer brand-minimizer" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item px-3">
+      <a class="nav-link dropdown-toggle company-item" data-toggle="dropdown">
+        <i class="fa fa-dashboard"></i>
+        <span>Dashboard</span>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" [routerLink]="['/submitted-reports']">Submitted Reports</a>
+      </div>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" [routerLink]="['/clients']">
+        <i class="fa fa-user-circle"></i>
+        <span>Clients</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" [routerLink]="['/sites']">
+        <i class="fa fa-sitemap"></i>
+        <span>Site</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" [routerLink]="['/contact']">
+        <i class="fa fa-address-book"></i>
+        <span>Contacts</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" [routerLink]="['/employees']">
+        <i class="fa fa-address-book"></i>
+        <span>Employees</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="#">
+        <i class="fa fa-database"></i>
+        <span>Task Manager</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" href="#">
+        <i class="fa fa-book"></i>
+        <span>Scheduling</span>
+      </a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link" [routerLink]="['/rostering']">
+        <i class="fa fa-cube"></i>
+        <span>Rostering</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" data-toggle="tooltip" title="Messengers" href="#">
+        <i class="fa fa-envelope-open"></i>
+        <span class="badge badge-pill badge-danger">5</span>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" data-toggle="tooltip" title="Run Reports" href="#">
+        <i class="fa fa-paste"></i>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#" data-toggle="tooltip" title="Company">
+        <i style="font-size: 20px" class="fa fa-home"></i>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#" data-toggle="tooltip" title="Mute">
+        <i style="font-size: 20px" class="fa fa-volume-off"></i>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#" data-toggle="tooltip" title="Help">
+        <i style="font-size: 20px" class="fa fa-question-circle-o"></i>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#" data-toggle="tooltip" title="Admin">
+        <i style="font-size: 20px" class="fa fa-gear"></i>
+      </a>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#" data-toggle="tooltip" title="Content">
+        <i style="font-size: 20px" class="fa fa-leanpub"></i>
+      </a>
+    </li>
+  </ul>
+</header>

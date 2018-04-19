@@ -1,0 +1,13 @@
+:host {
+
+  .dropdown-menu.show {
+    top: 0;
+
+    .dropdown-item {
+      min-width: 100%;
+      width: 100%;
+    }
+
+  }
+
+}

@@ -1,0 +1,14 @@
+app-dashboard {
+    width: 90%;
+}
+
+.button-right {
+    float: right;
+}
+:host /deep/ .client-filter-content .box-filter .select-filter {
+    width:auto;
+    margin-bottom:10px !important;
+}
+:host /deep/ .client-filter-content .box-filter .select-filter .ui-dropdown .ui-dropdown-label{
+    padding-right:30px;
+}

@@ -1,0 +1,8 @@
+{
+    "environment": "qa",
+    "apiBase": "http://tuanle.myvnc.com/project-muonline/server-api/public/",
+    "status": {
+        "success": 1,
+        "error": 0
+    }
+}

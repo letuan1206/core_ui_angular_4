@@ -1,0 +1,432 @@
+<!-- <main class="main"> -->
+
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <!---->
+    <a href="#/">Home</a>
+    <!---->
+  </li>
+
+  <li class="breadcrumb-item active">
+    <!---->
+    <!---->
+    <span tabindex="0">Setup</span>
+  </li>
+</ol>
+
+<div class="container-fluid">
+
+  <!--/.row-->
+
+
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              Control Panel
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-12 col-lg-4">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="callout callout-info">
+                        <small class="text-muted">Resets</small>
+                        <br>
+                        <strong class="h4">{{characterChoose?.Resets | number}}</strong>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="callout callout-danger">
+                        <small class="text-muted">Relifes</small>
+                        <br>
+                        <strong class="h4">{{characterChoose?.Relifes | number}}</strong>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <hr class="mt-0">
+                  <img src="assets/img/avatars/8.jpg" class="avatar-style">
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="horizontal-bars type-2">
+                    <li>
+                      <i class="icon-user"></i>
+                      <span class="title">Level</span>
+                      <span class="value">{{characterChoose?.cLevel}}
+                        <span class="text-muted small">({{(characterChoose?.cLevel / 400 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-primary" role="progressbar" [style.width]="getProcess(characterChoose?.cLevel, 'cLevel')" aria-valuenow="43"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-user"></i>
+                      <span class="title">Zen</span>
+                      <span class="value">{{characterChoose?.Money | number}}
+                        <span class="text-muted small">({{(characterChoose?.Money / 2000000000 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" role="progressbar" [style.width]="getProcess(characterChoose?.Money, 'money')" aria-valuenow="43"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-globe"></i>
+                      <span class="title">Sức mạnh</span>
+                      <span class="value">{{characterChoose?.Strength | number}}
+                        <span class="text-muted small">({{(characterChoose?.Strength / 65000 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-success" role="progressbar" [style.width]="getProcess(characterChoose?.Strength)" aria-valuenow="56"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-globe"></i>
+                      <span class="title">Nhanh nhẹn</span>
+                      <span class="value">{{characterChoose?.Dexterity | number}}
+                        <span class="text-muted small">({{(characterChoose?.Dexterity / 65000 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-success" role="progressbar" [style.width]="getProcess(characterChoose?.Dexterity)" aria-valuenow="56"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-globe"></i>
+                      <span class="title">Sức khỏe</span>
+                      <span class="value">{{characterChoose?.Vitality | number}}
+                        <span class="text-muted small">({{(characterChoose?.Vitality / 65000 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-success" role="progressbar" [style.width]="getProcess(characterChoose?.Vitality)" aria-valuenow="56"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-globe"></i>
+                      <span class="title">Năng lượng</span>
+                      <span class="value">{{characterChoose?.Energy | number}}
+                        <span class="text-muted small">({{(characterChoose?.Energy / 65000 * 100) | number:'1.1-1'}}%)</span>
+                      </span>
+                      <div class="bars">
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-success" role="progressbar" [style.width]="getProcess(characterChoose?.Energy)" aria-valuenow="56"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="icons-list">
+                    <li>
+                      <i class="icon-screen-desktop bg-primary"></i>
+                      <div class="desc">
+                        <div class="title">Master Level</div>
+                        <small>Cấp độ tu luyện Master</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Điểm</div>
+                        <strong>{{characterChoose?.SCFMasterLevel | number}}</strong>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-screen-smartphone bg-info"></i>
+                      <div class="desc">
+                        <div class="title">Master Point</div>
+                        <small>Số điểm Master có thể cộng</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Điểm</div>
+                        <strong>{{characterChoose?.SCFMasterPoints | number}}</strong>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-screen-smartphone bg-warning"></i>
+                      <div class="desc">
+                        <div class="title">Reset ngày / Giới hạn</div>
+                        <small>Số lần Reset trong ngày</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Lần</div>
+                        <strong>{{characterChoose?.Reset_Day | number}} / {{characterChoose?.Reset_Limit | number}}</strong>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-user bg-danger"></i>
+                      <div class="desc">
+                        <div class="title">Reset tháng</div>
+                        <small>Lorem ipsum dolor sit amet</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Sold this week</div>
+                        <strong>928</strong>
+                      </div>
+                      <div class="actions">
+                        <button type="button" class="btn btn-link text-muted">
+                          <i class="icon-settings"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-social-spotify bg-success"></i>
+                      <div class="desc">
+                        <div class="title">Bùa EXP</div>
+                        <small>Lorem ipsum dolor sit amet</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Sold this week</div>
+                        <strong>893</strong>
+                      </div>
+                      <div class="actions">
+                        <button type="button" class="btn btn-link text-muted">
+                          <i class="icon-settings"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <i class="icon-cloud-download bg-danger"></i>
+                      <div class="desc">
+                        <div class="title">Bùa thuộc tính</div>
+                        <small>Lorem ipsum dolor sit amet</small>
+                      </div>
+                      <div class="value">
+                        <div class="small text-muted">Downloads</div>
+                        <strong>121.924</strong>
+                      </div>
+                      <div class="actions">
+                        <button type="button" class="btn btn-link text-muted">
+                          <i class="icon-settings"></i>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              Control Panel
+            </div>
+            <div class="card-body">
+              <div class="setup-content">
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-1.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Personal Setting </h3>
+                    <div class="routers-setup">
+                      <a [routerLink]="['/personal-setting', 'user-information']">User Information</a>
+                      <span class="division">|</span>
+                      <a [routerLink]="['/personal-setting', 'themes']">Themes </a>
+                    </div>
+                    <div class="routers-setup">
+                      <a [routerLink]="['/personal-setting', 'email-setting']">Email Setting </a>
+                      <span class="division">|</span>
+                      <a [routerLink]="['/personal-setting', 'email-signature']"> Email Signature </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-4.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Users &amp; Permission</h3>
+                    <div class="routers-setup">
+                      <a href="#">Users</a>
+                      <span class="division">|</span>
+                      <a href="#">Profiles </a>
+                      <span class="division">|</span>
+                      <a href="#">Setting</a>
+                    </div>
+                    <div class="routers-setup">
+                      <a href="#">Roles</a>
+                      <span class="division">|</span>
+                      <a href="#"> Divisions</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-7.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Organization Settings</h3>
+                    <div class="routers-setup">
+                      <a [routerLink]="['/organisation']">Organisations</a>
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-2.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Configuration System </h3>
+                    <div class="routers-setup">
+                      <!--<a [routerLink]="['/configuration', id_country]">Country</a>-->
+                      <a [routerLink]="['/configuration']">States </a>
+                      <span class="division">|</span>
+                      <a [routerLink]="['/configuration']">Divisions </a>
+                      <span class="division">|</span>
+                      <a [routerLink]="['/configuration']">Ratings</a>
+
+                    </div>
+                    <div class="routers-setup">
+                      <a [routerLink]="['/configuration']">Services </a>
+                      <span class="division">|</span>
+
+                      <a [routerLink]="['/configuration']">Industries </a>
+                      <span class="division">|</span>
+
+                      <a [routerLink]="['/configuration']">Positions </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-5.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Templates</h3>
+                    <div class="routers-setup">
+                      <a href="#">Email Templates</a>
+                      <span class="division">|</span>
+                      <a href="#">Mail Merge Templates </a>
+                    </div>
+                    <div class="routers-setup">
+                      <a href="#">Report Notifications Templates</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-8.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Automation</h3>
+                    <div class="routers-setup">
+                      <a href="#">Workflow</a>
+                      <span class="division">|</span>
+                      <a href="#">Assignment Rules</a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-3.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Reports Setup</h3>
+                    <div class="routers-setup">
+                      <a href="#">Report Type</a>
+                      <span class="division">|</span>
+                      <a href="#">Report Form Templates</a>
+                    </div>
+                    <div class="routers-setup">
+                      <a href="#">Report Categories</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-6.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Subscription Manager</h3>
+                    <div class="routers-setup">
+                      <a href="#">Active Subscriptions Users</a>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="box-setup__info">
+                  <div class="info-icon">
+                    <img src="assets/images/setup-icon-9.png">
+                  </div>
+                  <div class="info-content">
+                    <h3>Web Integration</h3>
+                    <div class="routers-setup">
+                      <a href="#">Web Foms</a>
+                      <span class="division">|</span>
+                      <a href="#">Auto response Rules</a>
+                    </div>
+                    <div class="routers-setup">
+                      <a href="#">Unsubscription form</a>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--/.col-->
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">
+          Nhân vật
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive-sm table-hover mb-0">
+            <tbody>
+              <tr *ngFor="let item of characters; let i = index;" class="company-item" data-toggle="tooltip" data-placement="bottom" title="Click để chọn">
+                <td class="text-center">
+                  <div class="avatar">
+                    <img src="assets/img/avatars/1.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                    <span class="avatar-status badge-success"></span>
+                  </div>
+                </td>
+                <td>
+                  <div>{{item.Name}}</div>
+                  <div class="small text-muted">
+                    <span>Level: {{item.cLevel}}</span> | Resets: {{item.Resets}}
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/.row-->
+</div>

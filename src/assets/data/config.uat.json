@@ -1,0 +1,10 @@
+{
+    "environment": "uat",
+    "apiBase": "https://vm10.uat01.oneit.com.au/prosekws/svc",
+    "uploadUrl": "https://vm10.uat01.oneit.com.au/prosekws/uploadFile",
+    "webRoot": "https://vm10.uat01.oneit.com.au/prosekws",
+    "status": {
+        "success": "ok",
+        "error": "error"
+    }
+}

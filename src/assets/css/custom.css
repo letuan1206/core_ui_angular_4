@@ -1,0 +1,224 @@
+.fake-link {
+  color: #20a8d8;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.fake-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #167495;
+}
+
+.input-invalid-feedback {
+    display: block;
+    margin-top: .25rem;
+    font-size: .875rem;
+    color: #f86c6b;
+}
+
+.input-ogranisation.ng-invalid {
+    border-color: #f86c6b;
+}
+
+.input-ogranisation.ng-invalid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(248, 108, 107, 0.25);
+}
+
+.sidebar-minimized .sidebar .nav>.nav-dropdown:hover>.nav-dropdown-items li a {
+    padding: 10px;
+}
+
+.img-loading {
+    width: 42px;
+}
+
+.sheet-right-edit .fake-link {
+    margin-left: 15px;
+}
+
+ss-multiselect-dropdown {
+    background: transparent;
+    width: 100%;
+}
+
+ss-multiselect-dropdown .dropdown-inline {
+    display: block;
+    width: 100%;
+}
+
+ss-multiselect-dropdown .dropdown-inline .dropdown-toggle {
+    width: 100%;
+    background: transparent;
+    text-align: left;
+}
+
+ss-multiselect-dropdown .dropdown-inline .dropdown-toggle:after {
+    float: right;
+    margin-top: 10px;
+}
+
+ss-multiselect-dropdown .dropdown-menu {
+    width: 100%;
+}
+
+ss-multiselect-dropdown .dropdown-menu li a {
+    color: #151b1e;
+}
+
+.company-item:hover {
+    cursor: pointer;
+}
+
+.box-states ul li label:hover {
+    cursor: pointer;
+}
+
+.box-devisions-content .devisions-content ul li .fake-link {
+    display: none;
+}
+
+.box-devisions-content .devisions-content ul li:hover {
+    cursor: pointer;
+}
+
+.card.edit-card .box-devisions-content .devisions-content ul li:hover .fake-link {
+    display: inline-block;
+}
+
+div.collapse-all,
+div.expand-all {
+    color: #20a8d8;
+    cursor: pointer;
+}
+
+.devisions-content-header .title-top+.fake-link {
+    display: none;
+}
+
+.card.edit-card .devisions-content-header:hover .title-top+.fake-link {
+    display: inline-block;
+}
+
+.input-theme-color {
+    pointer-events: all !important;
+}
+
+.input-theme-color-select {
+    padding: 5px !important;
+    border: 2px solid #e2e2e2 !important;
+}
+
+.table-custom tr td input[type='password'] {
+    border: none;
+    outline: none;
+    padding: 0;
+    vertical-align: top;
+    height: 50px;
+    background: transparent;
+    width: 100%;
+}
+
+.table-custom tr td input[type='password']:focus {
+    border-bottom: 0.5px solid #20a8d8;
+}
+
+.roster-select {
+    max-width: 14px;
+}
+
+.date-range {
+    vertical-align: top;
+    margin-top: 5px
+}
+
+.start-time-right {
+    float: right;
+}
+
+.start-time-left {
+    float: left
+}
+
+p-dropdown,
+p-dropdown .ui-dropdown {
+    width: 100% !important;
+}
+
+owl-date-time .owl-dateTime-inputWrapper input {
+  height: 35px;
+  border: 1px solid #a4b7c1;
+  border-radius: 0;
+}
+
+.header-fixed .app-body {
+  min-height: calc(100vh - 55px);
+  min-height: -moz-calc(100vh - 55px);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(32,168,216,.5) !important;
+  box-shadow: 0 0 0 2px rgba(32,168,216,.5) !important;
+}
+.table thead th{
+  background-color: #29363d !important;
+  border-bottom: 1px solid #a4b7c1 !important;
+  color: #fff !important;
+}
+
+.table-edi tbody tr td:first-child{
+  padding-left: 1.25rem;
+  padding-right: 0.5rem;
+}
+.edi-body .table{
+  margin-bottom: 0;
+}
+ss-multiselect-dropdown .dropdown-inline .dropdown-toggle{
+  position: relative;
+}
+ss-multiselect-dropdown .dropdown-inline .dropdown-toggle:after{
+  position: absolute;
+  right: 10px;
+}
+
+@media screen and (min-width: 1200px){
+  #modalAddShift .modal-lg{
+    max-width: 97%;
+  }
+}
+
+app-home {
+    min-height: calc(100vh - 50px);
+}
+
+.no-border-table table tr td{
+  border: none;
+  text-align: left;
+  border-color: transparent !important;
+  border-bottom-color: #c2cfd6 !important;
+  line-height: 40px;
+}
+
+.no-border-table table tr th{
+  color: #000000;
+  font-weight: bold !important;
+  background: #ffffff !important;
+  text-align: left;
+  border-color: transparent !important;
+  border-bottom-color: #c2cfd6 !important;
+}
+
+.required:after {
+    color: red;
+    content: " *";
+}
+
+.avatar-style {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    border: 5px solid #faa602;
+}
