@@ -1,4 +1,67 @@
 <div class="sidebar">
+  <div class="sidebar-header">
+    <img src="img/avatars/8.jpg" class="img-avatar" alt="Avatar">
+    <div>
+      <strong>JOHN DOE</strong>
+    </div>
+    <div class="text-muted">
+      <small>Founder &amp; CEO</small>
+    </div>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button type="button" class="btn btn-link">
+        <i class="icon-settings"></i>
+      </button>
+      <button type="button" class="btn btn-link">
+        <i class="icon-speech"></i>
+      </button>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="icon-user"></i>
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header text-center">
+            <strong>Nhân vật</strong>
+          </div>
+          <a class="dropdown-item" href="#" *ngFor="let item of characters; let i=index;">
+            <i class="fa fa-bell-o"></i> {{item?.Name}}
+            <span class="badge badge-info">{{item?.Resets}}</span>
+          </a>
+          <!-- <a class="dropdown-item" href="#">
+            <i class="fa fa-envelope-o"></i> Messages
+            <span class="badge badge-success">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-tasks"></i> Tasks
+            <span class="badge badge-danger">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-comments"></i> Comments
+            <span class="badge badge-warning">42</span>
+          </a>
+          <div class="dropdown-header text-center">
+            <strong>Settings</strong>
+          </div>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-user"></i> Profile</a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-wrench"></i> Settings</a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-usd"></i> Payments
+            <span class="badge badge-secondary">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-file"></i> Projects
+            <span class="badge badge-primary">42</span>
+          </a>
+          <div class="divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-shield"></i> Lock Account</a>
+          <a class="dropdown-item" href="#">
+          <i class="fa fa-lock"></i> Logout</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
   <nav class="sidebar-nav">
     <ul class="nav">
       <li [hidden]="!showMenuDashboard" class="nav-item">

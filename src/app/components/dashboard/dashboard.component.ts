@@ -1,3 +1,4 @@
+import { STORE_USER, STORE_CHAR_LIST, STORE_CHAT_CHOOSE } from './../common/common-actions';
 import { Character, User } from './../../models/user';
 import { ConfigService } from './../../services/config.service';
 import { DashboardService } from './dashboard.service';
@@ -22,25 +23,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     private dashboardService: DashboardService,
     private configService: ConfigService
   ) {
-    this.account = JSON.parse(sessionStorage.getItem(LOCALSTORE_KEY.USER));
+    this.account = this.helperService.getLocalStore(LOCALSTORE_KEY.USER);
   }
   ngOnInit() {
-    // const routerURL = this.router.url;
-
-    // $('body').addClass('sidebar-minimized brand-minimized');
-    this.helperService.showLoading();
-    this.dashboardService.getCharacters(this.account).then(res => {
-      if (res.status === this.configService.successStatus) {
-        this.characters = res.data;
-
-        this.characterChoose = this.characters[0];
-        console.log(this.characters);
-      }
-      this.helperService.hideLoading();
-    }).catch(err => {
-      console.log(err);
-      this.helperService.hideLoading();
-    });
+    this.getCharacters();
   }
 
   ngAfterViewInit() {
@@ -54,5 +40,28 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       return value / 400 * 100 + '%';
     }
     return value / 65000 * 100 + '%';
+  }
+
+  getCharacters() {
+    this.helperService.showLoading();
+    this.dashboardService.getCharacters(this.account).then(res => {
+      if (res.status === this.configService.successStatus) {
+        this.characters = res.data;
+
+        this.characterChoose = this.characters[0];
+        this.helperService.dispatchLocalStore(LOCALSTORE_KEY.CHAR_LIST, this.characters);
+        this.helperService.dispatchLocalStore(LOCALSTORE_KEY.CHAR_CHOOSE, this.characterChoose);
+
+        this.helperService.dispatchToRedux(STORE_USER, this.account);
+        this.helperService.dispatchToRedux(STORE_CHAR_LIST, this.characters);
+        this.helperService.dispatchToRedux(STORE_CHAT_CHOOSE, this.characterChoose);
+
+        console.log(this.characters);
+      }
+      this.helperService.hideLoading();
+    }).catch(err => {
+      console.log(err);
+      this.helperService.hideLoading();
+    });
   }
 }

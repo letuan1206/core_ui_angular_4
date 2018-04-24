@@ -2,7 +2,7 @@ import { FormGroup, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { LOCALSTORE_KEY } from '../components/common/constants';
-import { NgRedux } from 'ng2-redux';
+import { NgRedux, select } from 'ng2-redux';
 import get = require('lodash/get');
 import find = require('lodash/find');
 import * as moment from 'moment';
@@ -37,6 +37,7 @@ export class HelperService {
   /**
    * Function dispatch to redux
    */
+
   dispatchToRedux(actionName, data) {
     this.ngRedux.dispatch({
       type: actionName,
@@ -44,6 +45,13 @@ export class HelperService {
     })
   }
 
+  dispatchLocalStore(localKey, data) {
+    sessionStorage.setItem(localKey, JSON.stringify(data));
+  }
+
+  getLocalStore(localKey) {
+    return JSON.parse(sessionStorage.getItem(localKey));
+  }
   markFormGroupTouched(formGroup: FormGroup) {
     return (<any>Object).values(formGroup.controls).forEach(control => {
       control.markAsTouched();

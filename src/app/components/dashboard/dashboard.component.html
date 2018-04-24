@@ -1,5 +1,3 @@
-<!-- <main class="main"> -->
-
 <!-- Breadcrumb -->
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
@@ -16,20 +14,28 @@
 </ol>
 
 <div class="container-fluid">
-
   <!--/.row-->
 
-
-
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              Control Panel
+              Thông tin nhân vật
+              <div class="card-actions ">
+                <!-- <a href="# " class="btn-setting d-sm-down-none ">
+                  <i class="icon-settings "></i>
+                </a> -->
+                <a href="#" class="btn btn-minimize " data-toggle="collapse" data-target="#collapseCharInfo " aria-expanded="true ">
+                  <i class="icon-arrow-up "></i>
+                </a>
+                <a href="#" class="btn" (click)="getCharacters()">
+                  <i class="icon-refresh "></i>
+                </a>
+              </div>
             </div>
-            <div class="card-body">
+            <div class="card-body collapse show" id="collapseCharInfo">
               <div class="row">
                 <div class="col-sm-12 col-lg-4">
                   <div class="row">
@@ -397,7 +403,7 @@
     </div>
 
     <!--/.col-->
-    <div class="col-md-3">
+    <!-- <div class="col-md-3">
       <div class="card">
         <div class="card-header">
           Nhân vật
@@ -426,7 +432,7 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <!--/.row-->
 </div>

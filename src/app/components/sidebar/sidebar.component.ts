@@ -1,5 +1,8 @@
+import { Character } from './../../models/user';
+import { HelperService } from './../../services/helper.service';
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { select } from 'ng2-redux';
 declare var jquery: any;
 declare var $: any;
 @Component({
@@ -28,12 +31,26 @@ export class SidebarComponent implements OnInit, DoCheck {
   }
 
   siteID: string;
+  characters: Character[] = [];
+  characterChoose: Character;
 
-  constructor(private router: Router) { }
+  // Redux store
+  @select(s => s.common.charList) charList;
+  constructor(private router: Router,
+    private helperService: HelperService
+  ) { }
 
   ngOnInit() {
     this.resetShowSubMenuSite();
+    this.loadStoreData();
   }
+
+  loadStoreData() {
+    this.charList.subscribe(data => {
+      this.characters = data;
+    });
+  }
+
 
   posRouterCurrent() {
     return false;

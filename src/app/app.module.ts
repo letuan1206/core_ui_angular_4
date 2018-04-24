@@ -24,6 +24,8 @@ import { AgmCoreModule } from '@agm/core';
 import { CustomBrowserXhr } from './services/xhr.services';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PopoverModule } from "ngx-popover";
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 // Redux
 import { NgRedux, NgReduxModule } from 'ng2-redux';
@@ -82,6 +84,8 @@ import { AuthAccountGuard } from './guards/auth-account.guard';
     DataTableModule,
     MomentModule,
     BrowserAnimationsModule,
+    PopoverModule,
+    OverlayPanelModule,
   ],
   declarations: [
     HeaderComponent,

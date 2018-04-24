@@ -22,6 +22,8 @@ export const themeColorActions: any = {
 
 export const LOCALSTORE_KEY: any = {
   USER: 'USER',
+  CHAR_LIST: 'CHAR_LIST',
+  CHAR_CHOOSE: 'CHAR_CHOOSE',
   THEME_SETTING: 'THEME_SETTING',
   COUNTRY_ID: 'COUNTRY_ID'
 }

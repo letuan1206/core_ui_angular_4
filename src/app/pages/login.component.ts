@@ -45,7 +45,8 @@ export class LoginComponent {
           that.helperService.showError(that.errorMessages);
           return;
         } else {
-          sessionStorage.setItem(LOCALSTORE_KEY.USER, JSON.stringify(res.data));
+          that.helperService.dispatchLocalStore(LOCALSTORE_KEY.USER, res.data);
+          // sessionStorage.setItem(LOCALSTORE_KEY.USER, JSON.stringify(res.data));
           that.helperService.hideLoading();
           that.helperService.showSuccess(res.message);
           that.router.navigate(['/dashboard']);
